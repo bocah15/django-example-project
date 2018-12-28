@@ -19,6 +19,15 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Inventaris
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'inventaris:inventaris_list' %}">List</a>
+          <a class="dropdown-item" href="{% url 'inventaris:inventaris_form' %}">Add new</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Surat Masuk
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

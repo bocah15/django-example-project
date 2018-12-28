@@ -25,7 +25,7 @@ SECRET_KEY = ')173vh&yhe9@=47)e%4-cc!3pfn3=(fs66fsy07yt$n$&2!rmh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'surat_menyurat',
+    'inventaris',
 ]
 
 MIDDLEWARE = [
@@ -76,12 +77,14 @@ WSGI_APPLICATION = 'administrasi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_class_base',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '8889',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'django_class_base',
+        # 'USER': 'root',
+        # 'PASSWORD': 'root',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '8889',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

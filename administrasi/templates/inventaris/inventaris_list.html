@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+	  <li class="breadcrumb-item active" aria-current="page">List</li>
+	  <li class="breadcrumb-item"><a href="{% url 'inventaris:inventaris_form' %}">Form</a></li>
+	</ol>
+</nav>
+<table class="table table-hover">
+	<thead>
+	  <tr>
+	    <th scope="col">No</th>
+	    <th scope="col">Nomor Inventaris</th>
+	    <th scope="col">Nama Barang</th>
+	    <th scope="col">Jumlah</th>
+	    <th scope="col">Kondisi</th>
+	    <th scope="col">#</th>
+	  </tr>
+	</thead>
+	{% for dt in object_list %}
+	  <tbody>
+	    <tr>
+	      <td scope="col">{{ forloop.counter }} .</td>
+	      <td scope="row">{{ dt.nomor }}</td>
+	      <td>{{dt.nama_barang}}</td>
+	      <td>{{dt.jumlah}}</td>
+	      <td>{{dt.kondisi_barang}}</td>
+	      <td>
+	        <a class="btn btn-warning btn-sm" href="{% url 'inventaris:inventaris_edit' dt.id %}">Edit</a> 
+	        <a class="btn btn-danger btn-sm" onclick="return confirm('Delete data?')" href="{% url 'inventaris:inventaris_delete' dt.id %}">Hapus</a>
+	      </td>
+	    </tr>
+	  </tbody>
+	{% endfor %}
+</table>
+{% endblock %}
